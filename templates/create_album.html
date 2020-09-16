@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Album</title>
+</head>
+<body>
+    <a href="back">Previous</a><br/>
+    <h4>Let's create an Post!</h4>
+    <h4>First, name your post, then, choose a file...</h4>
+    <form action="/upload" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Name your post" name="description">
+        <input type="file" id="myFile" name="image">
+        <input type="submit">
+      </form>
+    </body>
+</html>

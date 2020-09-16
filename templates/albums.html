@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Albums</title>
+    {%load static%}
+</head>
+<body>
+    <div class="header">
+        <h3>Hello, {{request.session.name}}!</h3>
+        <a href="logout">Logout</a><br/>
+        <a href="back">Previous</a><br/>
+    </div>
+    <div class="container">
+        {% for image in image %}
+        <strong>{{ logged_user.first_name }}</strong><br/>
+        <img src="{{ image.image.url }}" width=400 height=400>
+        <p>{{ image.created }}<br/>{{ image.description }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+<h1>Django Image Uploading</h1>
+<ul>
+  {% for post in object_list %}
+    <h2>{{ post.title }}</h2>
+    <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+  {% endfor %}
+</ul>
